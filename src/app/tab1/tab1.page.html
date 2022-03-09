@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-grid class="ion-margin-top">
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button (click)="takePicture()">Camera</ion-button>
+        <ion-button (click)="getGeolocation()" color="secondary">Location</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-text-center">
+      <ion-col size="12" class="ion-text-center">
+        <ion-text>Latitude: {{latitude}} </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-text>Longitude: {{longitude}}</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-img [src]="selectedImage" *ngIf="selectedImage"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
